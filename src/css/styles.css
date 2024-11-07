@@ -98,7 +98,8 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.loader {
+.loader,
+.load-more-loader {
   width: 48px;
   height: 48px;
   display: inline-block;
@@ -106,7 +107,9 @@
   margin: 0 auto;
 }
 .loader::after,
-.loader::before {
+.loader::before,
+.load-more-loader::after,
+.load-more-loader::before {
   content: '';
   box-sizing: border-box;
   width: 48px;
@@ -117,7 +120,8 @@
   top: 50%;
   animation: rotation 2s ease-in-out infinite alternate;
 }
-.loader::after {
+.loader::after,
+.load-more-loader::after {
   border-color: #ff3d00;
   animation-direction: alternate-reverse;
 }
