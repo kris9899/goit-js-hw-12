@@ -121,6 +121,15 @@ async function loadMoreImages() {
       loadedImages += data.hits.length;
       page += 1;
 
+      const image = document.querySelector('.img-card');
+      const imageHeight = image.getBoundingClientRect().height;
+
+      window.scrollBy({
+        left: 0,
+        top: imageHeight,
+        behavior: 'smooth',
+      });
+
       if (loadedImages >= totalHits) {
         loadMoreButton.classList.add('visually-hidden');
         iziToast.info({
